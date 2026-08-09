@@ -278,8 +278,9 @@ Overall, the analysis provides useful data-driven insights into movie popularity
 
 ---
 
-## Author
+# Author
 
 **Adil Muhammed K M**
 
-GitHub: [adilmuhammedkm](https://github.com/adilmuhammedkm)
+- GitHub: https://github.com/adilmuhammedkm
+- LinkedIn: https://www.linkedin.com/in/adilmuhammedkm
