@@ -1,139 +1,201 @@
 # Movie Data Exploratory Analysis
 
+An exploratory data analysis project that investigates movie production trends, audience engagement, popularity, genres, runtime, budget, and revenue to identify patterns and factors associated with movie performance.
+
+---
+
 ## Project Overview
 
-This project performs an exploratory data analysis (EDA) of a movie dataset containing information about movies, including release dates, genres, languages, budgets, revenues, ratings, popularity, runtime, cast, crew, production companies, and directors.
+The movie industry generates large amounts of data related to production, audience ratings, popularity, financial investment, and revenue.
 
-The analysis focuses on understanding the structure and quality of the dataset, handling missing and irrelevant data, preparing fields for analysis, and answering business-style questions through Python-based exploratory analysis.
+This project performs an end-to-end exploratory data analysis of movie data using Python to uncover meaningful patterns and answer important business questions related to movie performance.
+
+The analysis focuses on understanding how movie production has changed over time, how audience engagement relates to popularity, which genres attract greater audience interest, whether runtime influences popularity, and whether higher production budgets are associated with higher revenue.
+
+---
 
 ## Objectives
 
-- Understand the structure and characteristics of the movie dataset
-- Identify missing values and assess their impact
-- Perform data cleaning and preparation
-- Analyze movie ratings, popularity, revenue, budget, and runtime
-- Explore movie production companies, directors, languages, and genres
-- Investigate relationships and patterns within the dataset
-- Answer practical analytical questions using Pandas
+- Analyze movie production trends over time
+- Investigate the relationship between audience engagement and movie popularity
+- Compare average popularity across major movie genres
+- Examine the relationship between movie runtime and popularity
+- Analyze the relationship between production budget and revenue
+- Translate analytical findings into meaningful business questions and insights
+
+---
 
 ## Dataset
 
-The dataset contains **44,691 movie records and 19 columns**.
+The project uses a movie dataset containing information related to:
 
-Key fields include:
-
-- Movie ID
-- Title
-- Tagline
-- Release Date
+- Movie title and tagline
+- Release date and release year
 - Genres
-- Original Language
 - Budget
 - Revenue
-- Production Companies
-- Production Countries
-- Vote Count
-- Vote Average
+- Vote count
+- Vote average
 - Popularity
 - Runtime
-- Cast
-- Cast Size
-- Crew Size
-- Director
+- Cast and crew information
+- Production companies
+- Production countries
+- Original language
 
-The dataset contains substantial missing data in several fields, particularly budget, revenue, collection information, and taglines. Missing-value analysis was therefore an important part of the data preparation process.
+The dataset is stored in:
 
-## Analysis Performed
+```text
+data/movies_complete.csv
+```
 
-### 1. Dataset Exploration
+The analysis also accounts for the incomplete final year in the dataset when examining movie production trends.
 
-- Inspected the first records
-- Examined dataset dimensions
-- Reviewed data types
-- Generated descriptive statistics
-- Examined numerical distributions
-
-### 2. Data Quality Analysis
-
-- Identified null values
-- Calculated percentage of missing values by column
-- Investigated potentially irrelevant columns
-- Examined duplicate records
-- Reviewed data consistency
-
-### 3. Data Cleaning
-
-The analysis includes:
-
-- Removing selected irrelevant columns
-- Renaming columns for consistency
-- Converting release dates into a consistent datetime format
-- Examining missing-value handling approaches
-- Creating cleaned DataFrame versions for further analysis
-
-### 4. Exploratory Analysis
-
-The project investigates questions such as:
-
-- Which production company's movie generated the highest revenue?
-- Which movie has the highest vote average?
-- Which movie has the highest vote count?
-- Which action movie has the lowest budget?
-- Which director has the best vote average?
-- How many English-language movies are present?
-- How many movies were released in 1995?
-- Which movie has the highest popularity?
-- Which movie has the shortest runtime?
-- Which movie has the lowest cast and crew size?
-- What is the tagline of the movie with the lowest vote average?
-- What are the production countries associated with a specific movie?
-
-## Key Data Quality Observations
-
-The dataset contains significant levels of missing information.
-
-Examples from the initial analysis include:
-
-- `tagline` — approximately 54.6% missing
-- `belongs_to_collection` — approximately 90.0% missing
-- `budget_musd` — approximately 80.2% missing
-- `revenue_musd` — approximately 83.5% missing
-- `production_companies` — approximately 25.4% missing
-- `production_countries` — approximately 13.1% missing
-
-This highlights the importance of evaluating data completeness before performing analysis.
-
-## Descriptive Statistics
-
-Selected numerical statistics from the dataset:
-
-| Metric | Mean | Median |
-|---|---:|---:|
-| Budget (M USD) | 21.67 | 8.20 |
-| Revenue (M USD) | 68.97 | 16.87 |
-| Vote Count | 111.65 | 10 |
-| Vote Average | 6.00 | 6.10 |
-| Popularity | 2.96 | 1.15 |
-| Runtime (minutes) | 97.57 | 95 |
-| Cast Size | 12.48 | 10 |
-| Crew Size | 10.31 | 6 |
-
-These statistics illustrate substantial variation across financial, rating, popularity, runtime, and production-related attributes.
+---
 
 ## Tools & Technologies
 
-- Python
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
-- SciPy
-- Jupyter Notebook
+- **Python**
+- **Pandas** – Data cleaning, transformation, and analysis
+- **NumPy** – Numerical operations
+- **Matplotlib** – Data visualization
+- **Jupyter Notebook** – Exploratory analysis and documentation
+
+---
+
+## Analysis Performed
+
+### 1. Movie Production Trends
+
+Analyzed the number of movies released across different years to understand how movie production has changed over time.
+
+**Finding:** Movie production increased substantially over the years, with particularly strong growth from the 1990s onward.
+
+---
+
+### 2. Audience Ratings and Popularity
+
+Investigated the relationship between average movie ratings and popularity.
+
+**Finding:** Average rating alone does not strongly explain movie popularity. Movies with similar ratings can have substantially different popularity levels.
+
+---
+
+### 3. Audience Engagement and Popularity
+
+Analyzed the relationship between vote count and movie popularity.
+
+**Finding:** Movies with higher vote counts generally tend to have higher popularity, indicating a clear positive association between audience engagement and popularity.
+
+---
+
+### 4. Movie Genres and Popularity
+
+Compared average popularity across major movie genres.
+
+**Finding:** Adventure movies show the highest average popularity among the major genres analyzed, followed by Fantasy and Science Fiction.
+
+---
+
+### 5. Movie Runtime and Popularity
+
+Examined whether movie duration is strongly associated with audience popularity.
+
+**Finding:** The relationship between runtime and popularity appears weak and highly dispersed. Most movies fall within approximately 60–180 minutes, but popularity varies substantially within this range.
+
+---
+
+### 6. Movie Budget and Revenue
+
+Investigated whether higher production budgets are associated with higher movie revenue.
+
+**Finding:** Movies with higher production budgets generally tend to generate higher revenues. However, substantial variation exists, particularly among lower-budget movies, showing that budget alone does not guarantee strong revenue performance.
+
+---
+
+## Business Questions
+
+The analysis addresses the following business questions:
+
+### Q1. How has movie production changed over time?
+
+Movie production increased substantially over the years, with particularly rapid growth from the 1990s onward.
+
+### Q2. Does audience engagement influence movie popularity?
+
+Movies with higher vote counts generally tend to have higher popularity, showing a clear positive relationship between audience engagement and popularity.
+
+### Q3. Which movie genres attract the highest audience interest?
+
+Adventure movies have the highest average popularity among the major genres analyzed, followed by Fantasy and Science Fiction.
+
+### Q4. Does movie runtime strongly influence popularity?
+
+Runtime does not appear to be a strong indicator of popularity. Most movies fall within approximately 60–180 minutes, while popularity varies considerably within this range.
+
+### Q5. Does a higher movie budget lead to higher revenue?
+
+Higher-budget movies generally tend to generate higher revenues, although budget alone does not guarantee strong commercial performance.
+
+---
+
+## Key Insights
+
+- **Movie production has increased significantly over time**, with particularly strong growth in the number of releases from the 1990s onward.
+- **Audience engagement is strongly associated with movie popularity**, with movies receiving more votes generally achieving higher popularity.
+- **Adventure movies show the highest average popularity**, followed by Fantasy and Science Fiction.
+- **Movie runtime is not a strong indicator of popularity**, with most movies falling within approximately 60–180 minutes.
+- **Movie budget has a positive relationship with revenue**, although financial investment alone does not guarantee commercial success.
+- **Movie performance is influenced by multiple factors** rather than a single variable.
+
+---
+
+## Visualizations
+
+The project includes visualizations for the major analytical findings.
+
+### Production Over Time
+
+![Production Over Time](screenshots/Production%20Over%20Time.png)
+
+### Ratings vs Popularity
+
+![Ratings vs Popularity](screenshots/Ratings%20vs%20Popularity.png)
+
+### Audience Engagement vs Popularity
+
+![Audience Engagement vs Popularity](screenshots/Audience%20Engagement%20vs%20Popularity.png)
+
+### Genres vs Popularity
+
+![Genres vs Popularity](screenshots/Genres%20vs%20Popularity.png)
+
+### Runtime vs Popularity
+
+![Runtime vs Popularity](screenshots/Runtime%20vs%20Popularity.png)
+
+### Budget vs Revenue
+
+![Budget vs Revenue](screenshots/Budget%20vs%20Revenue.png)
+
+### Business Questions
+
+![Business Questions](screenshots/Business%20Questions.png)
+
+### Key Insights & Conclusion
+
+![Key Insights and Conclusion](screenshots/Key%20Insights%20%2B%20Conclusion.png)
+
+---
 
 ## Project Structure
 
 ```text
 Movie-Data-Exploratory-Analysis/
+│
+├── archive/
+│   ├── EDA ON SAMPLE DATASET.ipynb
+│   └── Handling Missing Values and Data...
 │
 ├── data/
 │   └── movies_complete.csv
@@ -142,62 +204,82 @@ Movie-Data-Exploratory-Analysis/
 │   └── 01_Movie_EDA.ipynb
 │
 ├── screenshots/
-│   └── analysis visualizations
-│
-├── archive/
-│   ├── EDA ON SAMPLE DATASET.ipynb
-│   └── Handling Missing Values and Data Visualisation.ipynb
+│   ├── Audience Engagement vs Popularity.png
+│   ├── Budget vs Revenue.png
+│   ├── Business Questions.png
+│   ├── Genres vs Popularity.png
+│   ├── Key Insights + Conclusion.png
+│   ├── Production Over Time.png
+│   ├── Ratings vs Popularity.png
+│   └── Runtime vs Popularity.png
 │
 └── README.md
 ```
 
-## Analysis Workflow
+---
 
-```text
-Raw Movie Dataset
-       ↓
-Dataset Exploration
-       ↓
-Data Quality Assessment
-       ↓
-Missing Value Analysis
-       ↓
-Data Cleaning & Preparation
-       ↓
-Descriptive Statistics
-       ↓
-Exploratory Analysis
-       ↓
-Analytical Questions
-       ↓
-Insights & Visualizations
+## How to Run
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/adilmuhammedkm/Movie-Data-Exploratory-Analysis.git
 ```
 
-## Outcome
+### 2. Navigate to the project
 
-This project demonstrates practical experience with the core stages of exploratory data analysis:
+```bash
+cd Movie-Data-Exploratory-Analysis
+```
 
-- Data inspection
-- Data quality assessment
-- Missing-value analysis
-- Data cleaning
-- Feature preparation
-- Descriptive statistics
-- Exploratory analysis
-- Data visualization
-- Question-driven analysis
+### 3. Install the required libraries
 
-The project provides a foundation for understanding movie-industry data and extracting meaningful patterns from a large real-world dataset.
+```bash
+pip install pandas numpy matplotlib jupyter
+```
 
-## Future Improvements
+### 4. Launch Jupyter Notebook
 
-Potential extensions include:
+```bash
+jupyter notebook
+```
 
-- Genre-level analysis using normalized genre data
-- Revenue and budget profitability analysis
-- Time-series analysis of movie releases
-- Director and production-company performance analysis
-- Correlation analysis between popularity, ratings, revenue, and budget
-- Interactive visualization dashboard
-- Advanced statistical analysis
-- Predictive modeling for movie ratings or revenue
+### 5. Open the notebook
+
+```text
+notebooks/01_Movie_EDA.ipynb
+```
+
+Run the notebook cells sequentially to reproduce the analysis.
+
+---
+
+## Main Notebook
+
+The complete exploratory analysis is available in:
+
+```text
+notebooks/01_Movie_EDA.ipynb
+```
+
+The notebook contains data exploration, analysis, visualizations, interpretations, business questions, key insights, and the final conclusion.
+
+---
+
+## Conclusion
+
+This exploratory analysis demonstrates that movie performance is influenced by multiple factors rather than a single variable.
+
+Movie production has increased substantially over time, while audience engagement shows a clear positive association with movie popularity. Genre is also associated with differences in audience interest, with Adventure, Fantasy, and Science Fiction showing higher average popularity among the major genres analyzed.
+
+In contrast, movie runtime shows a weak relationship with popularity, indicating that longer movies do not necessarily attract greater audience attention. Movie budget has a positive relationship with revenue, suggesting that higher financial investment can increase earning potential, although budget alone does not guarantee commercial success.
+
+Overall, the analysis provides useful data-driven insights into movie popularity and revenue performance and demonstrates the application of Python-based exploratory data analysis to a real-world dataset.
+
+---
+
+## Author
+
+**Adil Muhammed K M**
+
+GitHub: [adilmuhammedkm](https://github.com/adilmuhammedkm)
